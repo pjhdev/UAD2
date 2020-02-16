@@ -1,5 +1,6 @@
 package com.uad2.application.config;
-
+import com.uad2.application.exception.SentryExceptionResolver;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 /*
  * @USER JungHyun
  * @DATE 2019-09-22
@@ -37,4 +38,8 @@ public class WebConfig implements WebMvcConfigurer {
         WebMvcConfigurer.super.addInterceptors(registry);
     }
 
+    @Bean
+    public HandlerExceptionResolver sentryExceptionResolver() {
+        return new SentryExceptionResolver();
+    }
 }

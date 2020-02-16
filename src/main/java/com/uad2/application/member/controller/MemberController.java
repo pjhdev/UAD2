@@ -150,6 +150,16 @@ public class MemberController {
         return ResponseEntity.ok().build();
     }
 
+    /**
+     * sentry error test
+     */
+    @GetMapping("/api/sentry/test")
+    public ResponseEntity sentryTest()
+    {
+        throw new ClientException("sentry Error");
+
+        //return ResponseEntity.ok().build();
+    }
 }
 
 /*
